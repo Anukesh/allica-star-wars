@@ -1,0 +1,21 @@
+.search-container {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--star-wars-yellow);
+}

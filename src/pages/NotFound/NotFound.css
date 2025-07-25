@@ -1,0 +1,42 @@
+.not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.not-found-content {
+  text-align: center;
+  max-width: 600px;
+  z-index: 2;
+  position: relative;
+}
+
+.not-found-title {
+  font-family: "Starjedi", sans-serif;
+  font-size: 6rem;
+  color: var(--star-wars-yellow);
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px var(--star-wars-yellow-30);
+  letter-spacing: 4px;
+}
+
+.not-found-subtitle {
+  font-family: "Starjedi", sans-serif;
+  font-size: 1.5rem;
+  color: var(--star-wars-yellow);
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px var(--star-wars-yellow-10);
+}
+
+.not-found-message {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--star-wars-yellow);
+  margin-bottom: 3rem;
+  opacity: 0.9;
+}

@@ -1,0 +1,142 @@
+:root {
+  --star-wars-yellow: #ffe81f;
+  --star-wars-yellow-60: rgba(255, 232, 31, 0.6);
+  --star-wars-yellow-30: rgba(255, 232, 31, 0.3);
+  --star-wars-yellow-50: rgba(255, 232, 31, 0.5);
+  --star-wars-yellow-10: rgba(255, 232, 31, 0.1);
+}
+
+@font-face {
+  font-family: "Starjedi";
+  src: url("./assets/fonts/star-jedi/Starjedi.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#root {
+  height: 100vh;
+  overflow: hidden;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+/* Apply Starjedi font to all headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Starjedi", sans-serif;
+  color: var(--star-wars-yellow);
+  letter-spacing: 2px;
+}
+
+.app-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 0.2rem 0rem;
+}
+
+.app {
+  margin: 0 auto;
+  padding: 2rem;
+  letter-spacing: 2px;
+  color: var(--star-wars-yellow);
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: absolute;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--star-wars-yellow);
+  font-family: "Starjedi", sans-serif;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px var(--star-wars-yellow);
+}
+
+.favorites-count {
+  background-color: var(--star-wars-yellow);
+  color: black;
+  border-radius: 50%;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+  font-weight: bold;
+}
+
+.characters-grid,
+.favorites-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-rows: max-content;
+  gap: 2rem;
+  margin-top: 1rem;
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.characters-grid::-webkit-scrollbar,
+.favorites-grid::-webkit-scrollbar {
+  width: 8px;
+}
+
+.characters-grid::-webkit-scrollbar-track,
+.favorites-grid::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 4px;
+}
+
+.characters-grid::-webkit-scrollbar-thumb,
+.favorites-grid::-webkit-scrollbar-thumb {
+  background: var(--star-wars-yellow);
+  border-radius: 4px;
+  opacity: 0.7;
+}
+
+.characters-grid::-webkit-scrollbar-thumb:hover,
+.favorites-grid::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}

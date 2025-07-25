@@ -1,0 +1,62 @@
+/* Character Details Skeleton Loader Styles */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+.skeleton-back-link {
+  height: 1.2rem;
+  width: 150px;
+  margin-bottom: 2rem;
+}
+
+.skeleton-character-name {
+  height: 2rem;
+  width: 200px;
+  margin-bottom: 1.5rem;
+}
+
+.skeleton-detail-text {
+  height: 1rem;
+  width: 100%;
+  margin: 0.8rem 0;
+}
+
+.skeleton-detail-text:nth-child(2) {
+  width: 40%; /* Gender */
+}
+
+.skeleton-detail-text:nth-child(3) {
+  width: 35%; /* Height */
+}
+
+.skeleton-detail-text:nth-child(4) {
+  width: 50%; /* Hair Color */
+}
+
+.skeleton-detail-text:nth-child(5) {
+  width: 45%; /* Eye Color */
+}
+
+.skeleton-detail-text:nth-child(6) {
+  width: 60%; /* Home Planet */
+}
+
+.skeleton-films {
+  width: 80%; /* Films list */
+}
+
+.skeleton-starships {
+  width: 70%; /* Starships list */
+}
+
+@keyframes loading {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

@@ -1,0 +1,29 @@
+.character-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.no-results {
+  text-align: center;
+  color: #666;
+  margin: 2rem 0;
+  font-size: 1.1rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error {
+  color: #dc3545;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  /* width: 100%; */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 50%);
+}

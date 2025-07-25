@@ -1,0 +1,119 @@
+.character-card {
+  border: 1px dashed var(--star-wars-yellow);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: transform 0.2s ease-in-out;
+  position: relative;
+  max-height: 174px;
+  box-sizing: border-box;
+  color: var(--star-wars-yellow);
+  text-decoration: none;
+}
+
+.character-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px var(--star-wars-yellow);
+}
+
+.character-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.character-card h2 {
+  margin: 0 0 1rem 0;
+  font-family: "Starjedi", sans-serif;
+  color: var(--star-wars-yellow);
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+
+.character-card p {
+  margin: 0.5rem 0;
+}
+
+.favorite-button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #444;
+  text-shadow: 0 0 5px var(--star-wars-yellow-10);
+}
+
+.favorite-button.favorite {
+  color: var(--star-wars-yellow);
+}
+
+.favorite-button:hover {
+  transform: scale(1.2);
+  color: #f3f3f1;
+}
+
+.character-card-actions {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.2rem;
+}
+
+.edit-button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.edit-button:hover {
+  transform: scale(1.2);
+}
+
+.character-card-content {
+  padding-top: 2rem;
+}
+
+.edit-field {
+  border: solid 0.3px var(--star-wars-yellow);
+  background: transparent;
+  color: var(--star-wars-yellow);
+}
+
+.edit-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  justify-content: center;
+}
+
+.save-button,
+.cancel-button {
+  border: 1px solid var(--star-wars-yellow);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background-color: transparent;
+  color: var(--star-wars-yellow);
+}
+
+.save-button:hover {
+  background-color: var(--star-wars-yellow);
+  color: #000;
+  box-shadow: 0 0 15px var(--star-wars-yellow-50);
+  transform: translateY(-2px);
+}
+
+.cancel-button {
+  border-color: #666;
+  color: #666;
+}
+
+.cancel-button:hover {
+  background-color: #666;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(102, 102, 102, 0.3);
+}

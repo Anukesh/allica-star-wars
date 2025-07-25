@@ -1,0 +1,55 @@
+/* Skeleton Loader Styles */
+.character-card-skeleton {
+  pointer-events: none;
+}
+
+.character-card-skeleton:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.skeleton-link-content {
+  padding: 0;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+.skeleton-button {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+.skeleton-title {
+  height: 1.5rem;
+  width: 75%;
+  margin: 0 0 1rem 0; /* Match h2 margin */
+}
+
+.skeleton-text {
+  height: 1rem;
+  width: 100%;
+  margin: 0.5rem 0; /* Match p margin */
+}
+
+.skeleton-text:nth-child(2) {
+  width: 60%; /* For "Gender: ..." */
+}
+
+.skeleton-text:nth-child(3) {
+  width: 80%; /* For "Homeworld: ..." */
+}
+
+@keyframes loading {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
