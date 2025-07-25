@@ -12,6 +12,7 @@ interface APIResponse<T> {
 export const starWarsApi = createApi({
   reducerPath: "starWarsApi",
   baseQuery: fetchBaseQuery({ baseUrl: API_CONSTANTS.BASE_URL }),
+  tagTypes: ["Characters", "Character"], // ✅ Added tagTypes
   endpoints: (builder) => ({
     getCharacters: builder.query<
       APIResponse<Character>,
@@ -19,10 +20,13 @@ export const starWarsApi = createApi({
     >({
       query: ({ page = 1, search = "" }) =>
         `people/?page=${page}${search ? `&search=${search}` : ""}`,
+      providesTags: ["Characters"], // ✅ Added providesTags
     }),
 
     getCharacterById: builder.query<Character, string>({
       query: (id) => `people/${id}/`,
+      providesTags: (result, error, id) =>
+        result ? [{ type: "Character", id }] : [], // ✅ Added providesTags
     }),
 
     getPlanetById: builder.query<Planet, string>({
