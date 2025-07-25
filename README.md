@@ -1,45 +1,116 @@
-# React + TypeScript + Vite
+# Allica Star Wars App 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + TypeScript + Vite web application that integrates with the Star Wars API (SWAPI), built using modern tools, best practices, and comprehensive tests.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **React 18** (with Hooks & functional components)
+- **TypeScript** for static typing
+- **Vite** for fast development and optimized builds
+- **Vitest** + **React Testing Library** for unit and integration testing
+- **Redux Toolkit (RTK Query)** for state management and API handling
+- **ESLint** & **Prettier** for code quality and formatting
+- **CSS Modules / SCSS** for styling
+- **GitHub Actions / Azure Pipelines** (for CI/CD)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📁 Project Structure
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+allica-star-wars/
+├── public/                  # Static assets
+├── src/
+│   ├── assets/              # Icons, images
+│   ├── components/          # Reusable components
+│   ├── pages/               # Top-level route views
+│   ├── store/               # Redux slices and API logic
+│   ├── hooks/               # Custom hooks
+│   ├── types/               # Global TypeScript types
+│   ├── utils/               # Utility functions
+│   └── App.tsx              # Root component
+├── tests/                   # Custom test utilities or mocks
+├── .eslintrc / eslint.config.js
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
+## ⚠️ Important Note
+
+This project uses [https://swapi.dev](https://swapi.dev) to fetch Star Wars data.
+
+Due to an invalid SSL certificate on the API, Chrome may block requests.
+
+### ✅ To Fix:
+
+1. Open [https://swapi.dev](https://swapi.dev) in Chrome.
+2. If you see a “Your connection is not private” warning:
+   - Click **Advanced** → **Proceed to swapi.dev (unsafe)**.
+   - Or type `thisisunsafe` anywhere on the screen to continue.
+
+> This is required only once to allow the app to fetch dynamic content.
+
+## 📦 Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/Anukesh/allica-star-wars.git
+cd allica-star-wars
+
+# Install dependencies
+npm install
+```
+
+---
+
+## 🚀 Running the App
+
+```bash
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+---
+
+## ✅ Testing
+
+```bash
+# Run all test suites
+npm test
+
+# Watch mode
+npm run test:watch
+
+# Test coverage
+npm run coverage
+```
+
+---
+
+## 🔍 Linting & Formatting
+
+```bash
+# Lint code
+npm run lint
+
+# Fix lint errors
+npm run lint:fix
+
+# Format code using Prettier
+npm run format
+```
+
+### ESLint Configuration (Type-Aware + React Plugins)
 
 ```js
 // eslint.config.js
@@ -51,10 +122,9 @@ export default tseslint.config([
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
-      // Other configs...
-      // Enable lint rules for React
+      ...tseslint.configs.strictTypeChecked,
+      ...tseslint.configs.stylisticTypeChecked,
       reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
       reactDom.configs.recommended,
     ],
     languageOptions: {
@@ -62,8 +132,41 @@ export default tseslint.config([
         project: ['./tsconfig.node.json', './tsconfig.app.json'],
         tsconfigRootDir: import.meta.dirname,
       },
-      // other options...
     },
   },
 ])
 ```
+
+---
+
+## 🌐 API Integration
+
+The app fetches data from [SWAPI (Star Wars API)](https://swapi.dev/) using **Redux Toolkit Query**. This handles:
+
+- Caching
+- Auto-fetching
+- Loading state
+- Error handling
+- Auto-retries
+
+---
+
+## 🧪 Testing Strategy
+
+- Unit tests for Redux slices and components
+- Integration tests for pages (search, filters, URL updates)
+- Snapshot tests for stable UI rendering
+
+---
+
+## ⚙️ CI/CD Setup (Optional)
+
+Ready for integration with:
+
+- **GitHub Actions**
+- **Azure Pipelines**
+- **Netlify / Vercel / Firebase Hosting**
+
+Add a `.github/workflows/ci.yml` for automated linting and testing.
+
+---
